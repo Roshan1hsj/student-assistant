@@ -36,6 +36,8 @@ def attendance():
     stuwriter.writerows(data)
     myfile.close()
     print("ATTENDANCE TAKEN SUCCESSFULLY \n IT IS IN THE SAME LOCATION AS OF THIS PYTHON FILE")
+    print()
+    mind()
 
 
 def googlesearch():
