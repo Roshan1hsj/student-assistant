@@ -16,6 +16,21 @@ print("*                   WELCOME TO STUDENT ASSISTANT                         
 print("*                                                                          *")
 print("****************************************************************************")
 print()
+print("****************************************************************************")
+print("*                                                                          *")
+print("*                   ATTENDANCE SECTION                                     *")
+print("*                                                                          *")
+print("****************************************************************************")
+print()
+
+a=input("PLEASE GIVE YOUR ATTENDANCE\n PLEASE PRESS n IF ALREADY GIVEN \n>>>(y/n) : ")
+
+if a in "yYOKok":
+    attendance()
+else:
+    print()
+    mind()
+
 
 
 def attendance():
@@ -401,9 +416,9 @@ def youtube():
     if u == "1":
         downloader()
     elif u=="2":
-        print("1.ENTER THE VIDEO NAME WITH YOUTUBE KEYWORD AT THE END \n 2.OR TYPE YOUTUBE TO MANUALLY SEARCH IN IT")
+        print("1.ENTER THE VIDEO NAME \n 2.OR PRESS ENTER TO OPEN YOUTUBE")
 
-        query = input("ENTER THE SEARCH ITEM OR THE WEBSITE YOU WANT TO OPEN: ")
+        query = input("ENTER VIDEO NAME OR PRESS (ENTER): ")
         for i in search(query+"youtube", tld="co.in", num=1, stop=1, pause=2):
             webbrowser.open(i)
         for j in search(query+"youtube", tld="co.in", num=10, stop=10, pause=2):
@@ -430,12 +445,12 @@ def downloader():
     print()
 
     h=input("ENTER THE RESOLUTION OF THE VIDEO (720p/360p)\nENTER (mp3) TO DOWNLOAD ONLY AUDIO\n(720p/360p/mp3): ")
-    if h in "720pP":
-        ys = yt.streams.get_by_itag(18)
+    if h in "720p720P":
+        ys = yt.streams.get_by_itag(22)
     elif h in "MP3mp3audio":
         ys = yt.streams.get_by_itag(140)
     else:
-        ys = yt.streams.get_by_itag(22)
+        ys = yt.streams.get_by_itag(18)
 
     # Starting download
     print("Downloading...")
@@ -547,8 +562,15 @@ def mind():
         elif c == "3":
             twentyone()
         elif c == "4":
-            print("ENTER THE NAME OF THE GAME OR THE GENRE OF GAME LIKE\nACTION\nADVENTURE\nMYSTERY/PUZZLE")
-            googlesearch()
+            print("ENTER THE NAME OF THE GAME OR THE GENRE OF GAME LIKE\nACTION\nADVENTURE\nMYSTERY/PUZZLE\n")
+            query = input("ENTER THE GAME NAME OR PRESS (ENTER) TO DIRECTLY OPEN A GAME SITE: ")
+            for i in search(query+"online game", tld="co.in", num=1, stop=1, pause=2):
+                webbrowser.open(i)
+            for j in search(query+"online game", tld="co.in", num=10, stop=10, pause=2):
+                print(j)
+            print()
+            mind()
+
         elif c == "5":
             youtube()
         elif c == "6":
@@ -557,20 +579,3 @@ def mind():
             googlesearch()
         else:
             rating()
-
-
-
-
-print("****************************************************************************")
-print("*                                                                          *")
-print("*                   ATTENDANCE SECTION                                     *")
-print("*                                                                          *")
-print("****************************************************************************")
-print()
-
-a=input("PLEASE GIVE YOUR ATTENDANCE\n PLEASE PRESS n IF ALREADY GIVEN \n>>>(y/n) : ")
-
-if a in "yYOKok":
-    attendance()
-else:
-    mind()
