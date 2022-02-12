@@ -1,3 +1,4 @@
+from youtube_dl import YoutubeDL
 from googlesearch import search
 import webbrowser
 import os
@@ -56,5 +57,3 @@ def youtube():
     else:
         print ("WRONG CHOICE!!!")
         youtube()
-
-youtube()
