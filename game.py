@@ -183,7 +183,7 @@ def twentyone():
     def lose1():
         print("\n\nYOU LOSE !")
         print("Better luck next time !")
-        print()
+        exit()
 
     # checks whether the numbers are consecutive
     def check(xyz):
