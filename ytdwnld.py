@@ -1,44 +1,34 @@
-from pytube import YouTube
 from googlesearch import search
 import webbrowser
+import os
+def directory():
+    cwd = os.getcwd()
+    print("THE DOWNLOADED FILE IS AVAILABLE IN: {0}".format(cwd))
+    webbrowser.open(str(cwd))
+
+
+
 def downloader():
     link = input("Enter the link of YouTube video you want to download:  ")
-    yt = YouTube(link)
-
-    # Showing details
-    print("Title: ", yt.title)
-
-    print("Number of views: ", yt.views)
-    print("Length of video: ", yt.length)
-    print("Rating of video: ", yt.rating)
-    # Getting the highest resolution possible
-    print()
-
-    h=input("ENTER THE RESOLUTION OF THE VIDEO (720p/360p)\nENTER (mp3) TO DOWNLOAD ONLY AUDIO\n(720p/360p/mp3): ")
-    if h in "720p720P":
-        ys = yt.streams.get_by_itag(22)
-    elif h in "MP3mp3audio":
-        ys = yt.streams.get_by_itag(140)
-    else:
-        ys = yt.streams.get_by_itag(18)
-
-    # Starting download
-    print("Downloading...")
+    h=input("ENTER (mp4) FOR VIDEO\nENTER (mp3) TO DOWNLOAD ONLY AUDIO\n(mp4/mp3): ")
     try:
-        ys.download("C:\\Users\\User\\Downloads")
-        print("the video is available in Downloads")
-    except Exception as e:
-        ys.download()
-        print ("the video is available in the same location as the python project location")
-    finally:
-        print("Download completed!!")
-        print()
+        if h in "mp4MP4video":
+            video = YoutubeDL({'outtmpl': '%(title)s.%(ext)s',
+                               'format': 'mp4',
+                               "preferredquality": '22'})
+            video.extract_info(link)
+            directory()
 
-    f = input("want to download another one (Y \ N): ")
-    if f in "Nn":
-        exit()
-    else:
-        youtube()
+        elif h in "MP3mp3audio":
+            audio = YoutubeDL({'outtmpl': '%(title)s.%(ext)s', 'format': 'bestaudio'})
+            audio.extract_info(link)
+            directory()
+
+    except Exception as e:
+        print ("Something Wrong\nError-",e,"\nDOWNLOAD ONLINE\n")
+        webbrowser.open("https://y2mate.is/en65/")
+
+
 
 def youtube():
 
@@ -66,3 +56,5 @@ def youtube():
     else:
         print ("WRONG CHOICE!!!")
         youtube()
+
+youtube()
