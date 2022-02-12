@@ -183,7 +183,7 @@ def twentyone():
     def lose1():
         print("\n\nYOU LOSE !")
         print("Better luck next time !")
-        exit()
+        print()
 
     # checks whether the numbers are consecutive
     def check(xyz):
@@ -309,7 +309,7 @@ def twentyone():
             nex = input('> ')
             if nex in "yesYesYES":
                 print("You are quitting the game...")
-                exit(0)
+                break
             elif nex == "no":
                 print("Continuing...")
             else:
