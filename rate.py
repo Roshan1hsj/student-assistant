@@ -1,7 +1,7 @@
 from quote import quote
 def rating():
     try:
-        res = quote('short', limit=1)
+        res = quote('quote', limit=1)
         r = int(input("PLEASE, RATE THIS PROGRAM OUT OF 5\nENTER YOUR CHOICE (1/2/3/4/5): "))
         if (r > 5 or r < 1):
             print("CHOOSE A NUMBER FROM 1 T0 5")
