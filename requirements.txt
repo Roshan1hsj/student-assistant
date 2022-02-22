@@ -12,4 +12,5 @@ quote==2.0.4
 soupsieve==2.2.1
 typing-extensions==3.10.0.2
 websockets==10.1
+youtube-dl==2021.12.17
 yt-dlp==2022.2.4
