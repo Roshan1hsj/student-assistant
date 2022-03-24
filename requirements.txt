@@ -1,0 +1,17 @@
+altgraph==0.17
+appdirs==1.4.4
+beautifulsoup4==4.10.0
+bs4==0.0.1
+ffmpeg-python==0.2.0
+future==0.18.2
+gazpacho==1.1
+google==3.0.0
+mutagen==1.45.1
+pycparser==2.20
+pycryptodomex==3.14.1
+pywin32-ctypes==0.2.0
+quote==2.0.4
+soupsieve==2.2.1
+typing-extensions==3.10.0.2
+websockets==10.1
+yt-dlp==2022.2.4
